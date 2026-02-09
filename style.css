@@ -309,23 +309,7 @@ body {
   }
 }
 
-/* Estilos para dispositivos móviles */
-@media screen and (max-width: 600px) {
-  #card {
-    width: 90%;
-    max-width: 90%;
-    margin: 2em auto;
-  }
-
-  .side {
-    width: 90%;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-
-  .text {
-    font-size: 1em; /* Ajuste del tamaño de fuente */
-    /* CARTA OCULTA */
+/* CARTA OCULTA */
 #card {
   position: absolute;
   top: 0;
@@ -349,5 +333,16 @@ body {
     opacity: 0;
   }
 }
+
+/* RESPONSIVE */
+@media screen and (max-width: 600px) {
+  #card {
+    width: 90%;
+    max-width: 90%;
+    margin: 2em auto;
+  }
+
+  .text {
+    font-size: 1em;
   }
 }
