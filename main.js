@@ -3,9 +3,14 @@ $(document).ready(function () {
   const paragraphs = $('.typed');
   let index = 0;
 
+  // Guardar el texto original
+  paragraphs.each(function () {
+    $(this).data('text', $(this).text());
+    $(this).text('');
+  });
+
   function typeWriter(element, speed = 40, callback) {
-    const text = element.text();
-    element.text('');
+    const text = element.data('text');
     element.css('visibility', 'visible');
 
     let i = 0;
@@ -24,7 +29,7 @@ $(document).ready(function () {
     if (index < paragraphs.length) {
       typeWriter($(paragraphs[index]), 40, () => {
         index++;
-        setTimeout(startTyping, 500); // 🌸 pausa suave entre párrafos
+        setTimeout(startTyping, 500); // pausa suave
       });
     }
   }
@@ -56,7 +61,7 @@ $(document).ready(function () {
     setTimeout(startTyping, 1400);
   });
 
-  // 🎵 Botón de música
+  // 🎵 Música
   $('#music-btn').click(function () {
     const music = document.getElementById('bg-music');
 
