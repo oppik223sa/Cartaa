@@ -5,7 +5,7 @@ $(document).ready(function () {
 
   // Guardar el texto original
   paragraphs.each(function () {
-    $(this).data('text', $(this).text());
+    $(this).data('text', $(this).text().trim());
     $(this).text('');
   });
 
@@ -19,7 +19,7 @@ $(document).ready(function () {
         element.append(text.charAt(i));
         i++;
 
-        // 🔴 FORZAR SCROLL SUAVE MIENTRAS SE ESCRIBE
+        // 🔽 Scroll suave mientras se escribe
         const card = document.getElementById('card');
         card.scrollTop = card.scrollHeight;
 
@@ -34,8 +34,19 @@ $(document).ready(function () {
     if (index < paragraphs.length) {
       typeWriter($(paragraphs[index]), 180, () => {
         index++;
-        setTimeout(startTyping, 1200); // pausa suave entre párrafos
+        setTimeout(startTyping, 1200);
       });
+    } else {
+      // 📸 Mostrar foto final
+      setTimeout(() => {
+        $('#final-photo').css({
+          opacity: 1,
+          transform: 'scale(1)'
+        });
+
+        const card = document.getElementById('card');
+        card.scrollTop = card.scrollHeight;
+      }, 800);
     }
   }
 
@@ -66,10 +77,17 @@ $(document).ready(function () {
     setTimeout(startTyping, 1400);
   });
 
-  // 🎵 Música
+  // 🎵 Música con toggle
   $('#music-btn').click(function () {
     const music = document.getElementById('bg-music');
 
     if (music.paused) {
       music.play();
-      $(this).text('⏸ Pa
+      $(this).text('⏸ Pausar');
+    } else {
+      music.pause();
+      $(this).text('🎵 Música');
+    }
+  });
+
+});
