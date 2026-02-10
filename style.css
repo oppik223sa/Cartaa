@@ -73,12 +73,14 @@ body {
 #card {
   position: absolute;
   width: 320px;
+  max-height: 70vh;      /* 🔴 clave */
   padding: 20px;
   background: white;
   border-radius: 10px;
   visibility: hidden;
   opacity: 0;
   z-index: 10;
+  overflow-y: auto;      /* 🔴 clave */
 }
 
 /* ANIMACIÓN */
