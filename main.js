@@ -1,16 +1,29 @@
 $(document).ready(function () {
 
-  // Click sobre el sobre
-  $('.valentines-day').on('click', function () {
+  $('.valentines-day').click(function () {
 
-    $(this).animate(
-      { top: '+=40px', opacity: 0 },
-      1200,
-      'swing',
-      function () {
-        $(this).hide();
-      }
-    );
+  // Sobre se desvanece suavemente
+  $('.valentines-day').animate(
+    { top: '+=20px', opacity: 0 },
+    1800,
+    'swing'
+  );
+
+  // Mostrar carta con zoom muy suave
+  $('#card')
+    .css({
+      visibility: 'visible',
+      opacity: 0,
+      transform: 'scale(0.85)'
+    })
+    .delay(800)
+    .animate({ opacity: 1 }, 1800)
+    .css({
+      transform: 'scale(1)',
+      transition: 'transform 2s ease-in-out'
+    });
+
+});
 
     $('#card')
       .css({
