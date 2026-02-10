@@ -23,5 +23,15 @@ $(document).ready(function () {
         transition: 'transform 1.2s ease'
       });
   });
+$('#music-btn').click(function () {
+  const music = document.getElementById('bg-music');
 
+  if (music.paused) {
+    music.play();
+    $(this).text('⏸ Pausar');
+  } else {
+    music.pause();
+    $(this).text('🎵 Música');
+  }
+});
 });
