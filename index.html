@@ -1,67 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.png">
-    <link rel="stylesheet" href="style.css?v=3">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Feliz San Valentín</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Feliz San Valentín</title>
 </head>
 
 <body>
 
-    <!-- Música -->
-    <audio id="bg-music" loop>
-        <source src="always_somewere.mp3" type="audio/mpeg">
-    </audio>
+  <audio id="bg-music" loop>
+    <source src="always_somewere.mp3" type="audio/mpeg">
+  </audio>
 
-    <button id="music-btn">🎵 Música</button>
+  <button id="music-btn">🎵 Música</button>
 
-    <!-- Sobre -->
-    <div class="valentines-day">
-        <div class="envelope"></div>
-        <div class="heart"></div>
-        <div class="text">¡FELIZ DÍA DE<br>SAN VALENTÍN!</div>
-        <div class="front"></div>
+  <div class="valentines-day">
+    <div class="envelope"></div>
+    <div class="heart"></div>
+    <div class="text">¡FELIZ DÍA DE<br>SAN VALENTÍN!</div>
+    <div class="front"></div>
+  </div>
+
+  <div id="card">
+    <div class="side one">
+      <i class="fas fa-heart"></i>
     </div>
-
-    <!-- Carta -->
-    <div id="card">
-        <div class="side one">
-            <i class="fas fa-heart"></i>
-        </div>
-
-        <div class="side two">
-            <h2>🌷 Para ti 🌷</h2>
-
-            <p>Querida Shirley,</p>
-
-            <p>
-                Desde que llegaste a mi vida, muchas cosas cambiaron sin que me diera cuenta.
-                Las sonrisas son más sinceras, los días más ligeros y los momentos simples
-                se volvieron especiales.
-            </p>
-
-            <p>
-                Gracias por cada risa, por cada charla, por cada instante compartido.
-                Me encanta cómo eres, cómo piensas y cómo haces sentir a los demás.
-            </p>
-
-            <p>
-                Hoy solo quería recordarte lo importante que eres para mí
-                y lo mucho que valoro tenerte en mi vida. 💕
-            </p>
-
-            <p>
-                Con cariño,<br>
-                Marcos 💌
-            </p>
-        </div>
+    <div class="side two">
+      <h2>🌷 Para ti 🌷</h2>
+      <p>Querida Shirley,</p>
+      <p>
+        Desde que llegaste a mi vida, muchas cosas cambiaron sin que me diera cuenta.
+        Las sonrisas son más sinceras y los momentos simples se volvieron especiales.
+      </p>
+      <p>
+        Hoy solo quería recordarte lo importante que eres para mí. 💕
+      </p>
+      <p>
+        Con cariño,<br>Marcos 💌
+      </p>
     </div>
+  </div>
 
-    <!-- JS SIEMPRE al final -->
-    <script src="main.js?v=4"></script>
+  <!-- 🔴 ESTO ES OBLIGATORIO -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="main.js?v=5"></script>
 
 </body>
-                </html>
+</html>
