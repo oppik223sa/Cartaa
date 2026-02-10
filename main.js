@@ -27,7 +27,7 @@ $(document).ready(function () {
 
   function startTyping() {
     if (index < paragraphs.length) {
-      typeWriter($(paragraphs[index]), 300, () => {
+      typeWriter($(paragraphs[index]), 220, () => {
         index++;
         setTimeout(startTyping, 1200); // pausa suave
       });
