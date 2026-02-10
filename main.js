@@ -1,12 +1,41 @@
 $(document).ready(function () {
 
-  // CLICK SOBRE EL SOBRE
-  $('.valentines-day').on('click', function () {
+  const paragraphs = $('.typed');
+  let index = 0;
+
+  function typeWriter(element, speed = 40, callback) {
+    const text = element.text();
+    element.text('');
+    element.css('visibility', 'visible');
+
+    let i = 0;
+    const typing = setInterval(() => {
+      if (i < text.length) {
+        element.append(text.charAt(i));
+        i++;
+      } else {
+        clearInterval(typing);
+        if (callback) callback();
+      }
+    }, speed);
+  }
+
+  function startTyping() {
+    if (index < paragraphs.length) {
+      typeWriter($(paragraphs[index]), 40, () => {
+        index++;
+        setTimeout(startTyping, 500); // 🌸 pausa suave entre párrafos
+      });
+    }
+  }
+
+  $('.valentines-day').one('click', function () {
 
     // Animación del sobre
     $('.valentines-day').animate(
-      { top: '+=20px', opacity: 0 },
-      1800
+      { top: '+=40px', opacity: 0 },
+      1200,
+      'swing'
     );
 
     // Mostrar carta
@@ -14,41 +43,25 @@ $(document).ready(function () {
       .css({
         visibility: 'visible',
         opacity: 0,
-        transform: 'scale(0.85)'
+        transform: 'scale(0.95)'
       })
-      .delay(600)
-      .animate({ opacity: 1 }, 1800)
+      .delay(400)
+      .animate({ opacity: 1 }, 1200)
       .css({
         transform: 'scale(1)',
-        transition: 'transform 2s ease-in-out'
+        transition: 'transform 1.2s ease'
       });
 
-    // Texto letra por letra
-    setTimeout(() => {
-      const texts = document.querySelectorAll('.typed');
-      typeWriterSequence(texts, 45);
-    }, 1500);
-
+    // ✍️ Iniciar escritura
+    setTimeout(startTyping, 1400);
   });
 
-  // BOTÓN MÚSICA CON FADE
-  $('#music-btn').on('click', function () {
+  // 🎵 Botón de música
+  $('#music-btn').click(function () {
     const music = document.getElementById('bg-music');
 
     if (music.paused) {
-      music.volume = 0;
       music.play();
-
-      let vol = 0;
-      const fade = setInterval(() => {
-        if (vol < 0.75) {
-          vol += 0.02;
-          music.volume = vol;
-        } else {
-          clearInterval(fade);
-        }
-      }, 200);
-
       $(this).text('⏸ Pausar');
     } else {
       music.pause();
@@ -57,30 +70,3 @@ $(document).ready(function () {
   });
 
 });
-
-// FUNCIÓN TEXTO SECUENCIAL
-function typeWriterSequence(elements, speed) {
-  let index = 0;
-
-  function typeNext() {
-    if (index >= elements.length) return;
-
-    const el = elements[index];
-    const text = el.innerHTML;
-    el.innerHTML = '';
-    let i = 0;
-
-    const typing = setInterval(() => {
-      if (i < text.length) {
-        el.innerHTML += text.charAt(i);
-        i++;
-      } else {
-        clearInterval(typing);
-        index++;
-        setTimeout(typeNext, 600);
-      }
-    }, speed);
-  }
-
-  typeNext();
-      }
