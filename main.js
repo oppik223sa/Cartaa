@@ -39,17 +39,28 @@ $(document).ready(function () {
       });
   });
 
-  // Música
-  $('#music-btn').on('click', function () {
-    const music = document.getElementById('bg-music');
+  $('#music-btn').click(function () {
+  const music = document.getElementById('bg-music');
 
-    if (music.paused) {
-      music.play();
-      $(this).text('⏸ Pausar');
-    } else {
-      music.pause();
-      $(this).text('🎵 Música');
-    }
-  });
+  if (music.paused) {
+    music.volume = 0;
+    music.play();
+
+    let vol = 0;
+    const fadeIn = setInterval(() => {
+      if (vol < 0.75) {
+        vol += 0.02;
+        music.volume = vol;
+      } else {
+        clearInterval(fadeIn);
+      }
+    }, 200);
+
+    $(this).text('⏸ Pausar');
+  } else {
+    music.pause();
+    $(this).text('🎵 Música');
+  }
+});
 
 });
