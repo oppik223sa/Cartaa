@@ -1,37 +1,42 @@
 $(document).ready(function () {
 
-  $('.valentines-day').click(function () {
+  // Click sobre el sobre
+  $('.valentines-day').on('click', function () {
 
-    // Animación suave del sobre
-    $('.valentines-day').animate(
+    $(this).animate(
       { top: '+=40px', opacity: 0 },
       1200,
-      'swing'
+      'swing',
+      function () {
+        $(this).hide();
+      }
     );
 
-    // Mostrar carta con zoom suave
     $('#card')
       .css({
         visibility: 'visible',
         opacity: 0,
-        transform: 'scale(0.8)'
+        transform: 'scale(0.9)'
       })
-      .delay(600)
+      .delay(500)
       .animate({ opacity: 1 }, 1200)
       .css({
         transform: 'scale(1)',
         transition: 'transform 1.2s ease'
       });
   });
-$('#music-btn').click(function () {
-  const music = document.getElementById('bg-music');
 
-  if (music.paused) {
-    music.play();
-    $(this).text('⏸ Pausar');
-  } else {
-    music.pause();
-    $(this).text('🎵 Música');
-  }
-});
+  // Música
+  $('#music-btn').on('click', function () {
+    const music = document.getElementById('bg-music');
+
+    if (music.paused) {
+      music.play();
+      $(this).text('⏸ Pausar');
+    } else {
+      music.pause();
+      $(this).text('🎵 Música');
+    }
+  });
+
 });
