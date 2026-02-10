@@ -97,3 +97,15 @@ body {
 .valentines-day:hover .heart {
   transform: translateY(-40px) rotate(-45deg);
 }
+#music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: pink;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
