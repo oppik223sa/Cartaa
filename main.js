@@ -9,7 +9,7 @@ $(document).ready(function () {
     $(this).text('');
   });
 
-  function typeWriter(element, speed = 40, callback) {
+  function typeWriter(element, speed = 180, callback) {
     const text = element.data('text');
     element.css('visibility', 'visible');
 
@@ -18,6 +18,11 @@ $(document).ready(function () {
       if (i < text.length) {
         element.append(text.charAt(i));
         i++;
+
+        // 🔴 FORZAR SCROLL SUAVE MIENTRAS SE ESCRIBE
+        const card = document.getElementById('card');
+        card.scrollTop = card.scrollHeight;
+
       } else {
         clearInterval(typing);
         if (callback) callback();
@@ -29,21 +34,21 @@ $(document).ready(function () {
     if (index < paragraphs.length) {
       typeWriter($(paragraphs[index]), 180, () => {
         index++;
-        setTimeout(startTyping, 1200); // pausa suave
+        setTimeout(startTyping, 1200); // pausa suave entre párrafos
       });
     }
   }
 
   $('.valentines-day').one('click', function () {
 
-    // Animación del sobre
+    // 💌 Animación del sobre
     $('.valentines-day').animate(
       { top: '+=40px', opacity: 0 },
       1200,
       'swing'
     );
 
-    // Mostrar carta
+    // 📜 Mostrar carta
     $('#card')
       .css({
         visibility: 'visible',
@@ -67,11 +72,4 @@ $(document).ready(function () {
 
     if (music.paused) {
       music.play();
-      $(this).text('⏸ Pausar');
-    } else {
-      music.pause();
-      $(this).text('🎵 Música');
-    }
-  });
-
-});
+      $(this).text('⏸ Pa
