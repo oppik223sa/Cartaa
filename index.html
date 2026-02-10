@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="shortcut icon" href="favicon.png">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <title>Feliz San Valentín</title>
 </head>
 
 <body>
 
+  <!-- 🎵 MÚSICA -->
   <audio id="bg-music" loop>
     <source src="always_somewere.mp3" type="audio/mpeg">
   </audio>
 
   <button id="music-btn">🎵 Música</button>
 
+  <!-- 💌 SOBRE -->
   <div class="valentines-day">
     <div class="envelope"></div>
     <div class="heart"></div>
@@ -24,29 +28,41 @@
     <div class="front"></div>
   </div>
 
+  <!-- 📜 CARTA -->
   <div id="card">
     <div class="side one">
       <i class="fas fa-heart"></i>
     </div>
+
     <div class="side two">
       <h2>🌷 Para ti 🌷</h2>
-      <p>Querida Shirley,</p>
-      <p>
+
+      <p class="typed">Querida Shirley,</p>
+
+      <p class="typed">
         Desde que llegaste a mi vida, muchas cosas cambiaron sin que me diera cuenta.
-        Las sonrisas son más sinceras y los momentos simples se volvieron especiales.
+        Las sonrisas se volvieron más sinceras y los momentos simples, especiales.
       </p>
-      <p>
-        Hoy solo quería recordarte lo importante que eres para mí. 💕
+
+      <p class="typed">
+        Gracias por cada risa, cada charla y cada instante compartido.
+        Me gusta cómo eres y la calma que transmites. 💕
       </p>
-      <p>
-        Con cariño,<br>Marcos 💌
+
+      <p class="typed">
+        Hoy solo quería recordarte lo importante que eres para mí.
+      </p>
+
+      <p class="typed">
+        Con cariño,<br>
+        Marcos 💌
       </p>
     </div>
   </div>
 
-  <!-- 🔴 ESTO ES OBLIGATORIO -->
+  <!-- 📜 SCRIPTS (ORDEN IMPORTANTE) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="main.js?v=5"></script>
+  <script src="main.js?v=6"></script>
 
 </body>
 </html>
